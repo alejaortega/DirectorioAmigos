@@ -3,8 +3,8 @@ package autonoma.directoriodeamigos.models;
 
 /**
  *Modelo que representa una persona
- * @author Gilary
-  * @since 20250322
+ * @author Luisa Fernanda Henao Posada
+  * @since 20250323
  * @version 1.0
  */
 public abstract class Persona {

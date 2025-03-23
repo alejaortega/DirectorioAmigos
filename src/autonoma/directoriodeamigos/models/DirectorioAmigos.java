@@ -10,8 +10,6 @@ import autonoma.directoriodeamigos.exceptions.DatoObligatorioException;
 import autonoma.directoriodeamigos.exceptions.TelefonoInvalidoException;
 
 
-
-
 /**
  Representa un directorio de amigos, permitiendo gestionar su información.
  * @author Gilary
