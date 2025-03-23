@@ -1,12 +1,13 @@
 package autonoma.directoriodeamigos.main;
 
-import autonoma.directoriodeamigos.views.VentanaPrincipal;
+
+import autonoma.directoriodeamigos.views.PgPrincipal;
+
 
 public class DirectorioDeAmigos {
 
     public static void main(String[] args) {
-        DirectorioDeAmigos directorio = new DirectorioDeAmigos();
-        VentanaPrincipal ventana = new VentanaPrincipal(null, directorio);
+        PgPrincipal ventana = new PgPrincipal();
         ventana.setVisible(true);
     }
 }

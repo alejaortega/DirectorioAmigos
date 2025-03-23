@@ -1,7 +1,7 @@
 
 package autonoma.directoriodeamigos.views;
 
-import javax.swing.ImageIcon;
+
 
 /**
  *
@@ -16,11 +16,7 @@ public class MostrarAmigo extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(null);
-        try{
-            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/directoriodeamigos/images/DirectorioAmigos.png")).getImage());
-        }catch(Exception e){
-            
-        }
+
     }
 
     /**

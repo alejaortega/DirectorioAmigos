@@ -4,11 +4,10 @@ import autonoma.directoriodeamigos.exceptions.AmigoNoEncontradoException;
 import autonoma.directoriodeamigos.main.DirectorioDeAmigos;
 import autonoma.directoriodeamigos.models.Amigo;
 import autonoma.directoriodeamigos.models.DirectorioAmigos;
-import java.net.URL;
-import javax.swing.ImageIcon;
+
 import javax.swing.JOptionPane;
 
-import javax.swing.ImageIcon;
+
 
 /**
  * @author Luisa Fernanda Henao
@@ -24,10 +23,7 @@ public class BuscarAmigo extends javax.swing.JDialog {
         this.directorioDeAmigos = directoriodeamigos;
         initComponents();
         this.setLocationRelativeTo(null);
-        try{
-            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/directoriodeamigos/images/DirectorioLogo.png")).getImage());
-        }catch(Exception e){
-        }
+
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

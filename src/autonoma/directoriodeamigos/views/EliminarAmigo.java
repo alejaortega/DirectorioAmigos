@@ -1,7 +1,8 @@
 
 package autonoma.directoriodeamigos.views;
 
-import javax.swing.ImageIcon;
+
+
 
 /**
  * @author Luisa Fernanda Henao
@@ -14,10 +15,7 @@ public class EliminarAmigo extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(null);
-        try{
-            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/directoriodeamigos/images/DirectorioLogo.png")).getImage());
-        }catch(Exception e){
-        }
+
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

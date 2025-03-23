@@ -1,7 +1,7 @@
 
 package autonoma.directoriodeamigos.views;
 
-import javax.swing.ImageIcon;
+
 
 /**
  *
@@ -16,12 +16,10 @@ public class Informacion extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(null);
-        try{
-            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/directoriodeamigos/images/DirectorioAmigos.png")).getImage());
-        }catch(Exception e){
-            
-        }
+
     }
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.

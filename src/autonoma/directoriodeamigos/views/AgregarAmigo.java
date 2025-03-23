@@ -6,7 +6,6 @@ import autonoma.directoriodeamigos.exceptions.CorreoInvalidoException;
 import autonoma.directoriodeamigos.exceptions.DatoObligatorioException;
 import autonoma.directoriodeamigos.exceptions.TelefonoInvalidoException;
 import autonoma.directoriodeamigos.models.DirectorioAmigos;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,21 +13,17 @@ import javax.swing.JOptionPane;
  * @author Luisa Fernanda Henao
  */
 public class AgregarAmigo extends javax.swing.JDialog {
+    private PgPrincipal pgPrincipal;
     private DirectorioAmigos directorioAmigos;
 
     /**
      * Creates new form AgregarAmigo
      */
-    public AgregarAmigo(java.awt.Frame parent, boolean modal, DirectorioAmigos directorioAmigos) {
+    public AgregarAmigo(java.awt.Frame parent, boolean modal, DirectorioAmigos directorioAmigos, PgPrincipal pgPrincipal) {
         super(parent, modal);
+        this.pgPrincipal = pgPrincipal;
         this.directorioAmigos = directorioAmigos;
         initComponents();
-        this.setLocationRelativeTo(null);
-        try{
-            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/directoriodeamigos/images/DirectorioAmigos.png")).getImage());
-        }catch(Exception e){
-            
-        }
     }
 
     /**
