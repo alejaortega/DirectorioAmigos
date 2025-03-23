@@ -85,6 +85,23 @@ public class DirectorioAmigos {
         // Si no se encuentra, lanza una excepción
         throw new AmigoNoEncontradoException();
     }
+    
+    
+    
+    /**
+    * Elimina un amigo del directorio usando su número de teléfono.
+    * @param telefono Número de teléfono del amigo a eliminar.
+    * @throws AmigoNoEncontradoException Si no se encuentra un amigo con ese número.
+    */
+    public void eliminarAmigo(String telefono) throws AmigoNoEncontradoException {
+        for (Amigo a : listaAmigos) {
+            if (a.getTelefono().equals(telefono)) {
+              listaAmigos.remove(a);
+                return;
+            }
+        }
+        throw new AmigoNoEncontradoException();
+    }
 
     /**
      * Obtiene la lista de amigos registrados en el directorio.
