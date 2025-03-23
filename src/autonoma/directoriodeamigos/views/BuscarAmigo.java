@@ -25,18 +25,8 @@ public class BuscarAmigo extends javax.swing.JDialog {
         initComponents();
         this.setLocationRelativeTo(null);
         try{
-            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/directoriodeamigos/images/DirectorioAmigos.png")).getImage());
+            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/directoriodeamigos/images/DirectorioLogo.png")).getImage());
         }catch(Exception e){
-            
-        this.setLocationRelativeTo(parent); // Centrar la ventana respecto a la ventana padre
-
-        URL imageUrl = getClass().getClassLoader().getResource("autonoma/directoriodeamigos/images/DirectorioAmigos.png");
-        if (imageUrl == null) {
-            System.out.println("No se encontró la imagen. Verifica la ruta.");
-        } else {
-            System.out.println("Ruta de la imagen: " + imageUrl.toExternalForm());
-            this.setIconImage(new ImageIcon(imageUrl).getImage());
-        }
         }
     }
     @SuppressWarnings("unchecked")

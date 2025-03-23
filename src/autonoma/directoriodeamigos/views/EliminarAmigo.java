@@ -15,9 +15,8 @@ public class EliminarAmigo extends javax.swing.JDialog {
         initComponents();
         this.setLocationRelativeTo(null);
         try{
-            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/directoriodeamigos/images/DirectorioAmigos.png")).getImage());
+            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/directoriodeamigos/images/DirectorioLogo.png")).getImage());
         }catch(Exception e){
-            
         }
     }
     @SuppressWarnings("unchecked")
