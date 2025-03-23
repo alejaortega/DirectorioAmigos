@@ -13,16 +13,12 @@ public class EliminarAmigo extends javax.swing.JDialog {
     public EliminarAmigo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-<<<<<<< HEAD
         this.setLocationRelativeTo(null);
         try{
             this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/directoriodeamigos/images/DirectorioAmigos.png")).getImage());
         }catch(Exception e){
             
         }
-=======
-        
->>>>>>> 8796bbc (Subo avances de las ventanas BuscarAmigo y EliminarAmigo)
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

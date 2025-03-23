@@ -23,13 +23,11 @@ public class BuscarAmigo extends javax.swing.JDialog {
         super(parent, modal);
         this.directorioDeAmigos = directoriodeamigos;
         initComponents();
-<<<<<<< HEAD
         this.setLocationRelativeTo(null);
         try{
             this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/directoriodeamigos/images/DirectorioAmigos.png")).getImage());
         }catch(Exception e){
             
-=======
         this.setLocationRelativeTo(parent); // Centrar la ventana respecto a la ventana padre
 
         URL imageUrl = getClass().getClassLoader().getResource("autonoma/directoriodeamigos/images/DirectorioAmigos.png");
@@ -38,7 +36,7 @@ public class BuscarAmigo extends javax.swing.JDialog {
         } else {
             System.out.println("Ruta de la imagen: " + imageUrl.toExternalForm());
             this.setIconImage(new ImageIcon(imageUrl).getImage());
->>>>>>> 8796bbc (Subo avances de las ventanas BuscarAmigo y EliminarAmigo)
+        }
         }
     }
     @SuppressWarnings("unchecked")

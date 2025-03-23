@@ -5,12 +5,8 @@ import javax.swing.ImageIcon;
 public class VentanaPrincipal extends javax.swing.JFrame {
     private final DirectorioDeAmigos directorioDeAmigos;
     
-<<<<<<< HEAD
-    public VentanaPrincipal() {
-=======
     public VentanaPrincipal(javax.swing.JFrame parent, DirectorioDeAmigos directorioDeAmigos) {
         this.directorioDeAmigos = directorioDeAmigos;
->>>>>>> 8796bbc (Subo avances de las ventanas BuscarAmigo y EliminarAmigo)
         initComponents();
             this.setLocationRelativeTo(null);
         try{
@@ -18,8 +14,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }catch(Exception e){
         }
     }
-
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
