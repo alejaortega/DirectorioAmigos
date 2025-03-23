@@ -1,13 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package autonoma.directoriodeamigos.exceptions;
 
+package autonoma.directoriodeamigos.exceptions;
 /**
- *
- * @author jgiugtiñut
+ Exception lanzada cuando el numero de telefono 
+ ingresado no cumple el requesito de iniciar en
+ 606 o 30
+ * @author Gilary
+ * @since 20250322
+ * @version 1.0
  */
 public class TelefonoInvalidoException extends RuntimeException {
+    
+    /**
+     * Constructor de la excepcion con un mensaje 
+     */
+    
+    public TelefonoInvalidoException(){
+        super("El telefono debe iniciar con '606' o '30'. ");
+    }
     
 }
