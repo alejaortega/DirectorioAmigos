@@ -343,16 +343,16 @@ public class PgPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AgregarAmigoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarAmigoMouseEntered
-    
+    this.mouseEntered(AgregarAmigo);
     }//GEN-LAST:event_AgregarAmigoMouseEntered
 
     private void AgregarAmigoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarAmigoMouseExited
-       
+    this.mouseExited(AgregarAmigo);
     }//GEN-LAST:event_AgregarAmigoMouseExited
 
     private void AgregarAmigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarAmigoMouseClicked
-   //AgregarAmigo agregarAmigo = new AgregarAmigo (this, true);
-   //agregarAmigo.setVisible(true);
+   AgregAmigo agregarAmigo = new AgregAmigo (this, true);
+   agregarAmigo.setVisible(true);
     }//GEN-LAST:event_AgregarAmigoMouseClicked
 
     private void BuscarAmigoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarAmigoMouseEntered
@@ -401,11 +401,11 @@ public class PgPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_InformacionMouseClicked
 
      private void mouseEntered(JPanel panel){
-        panel.setBackground(new Color(79,149,157));
+        panel.setBackground(new Color(110, 233, 228));
         
     }
     private void mouseExited(JPanel panel){
-        panel.setBackground(new Color(87,180,186));
+        panel.setBackground(new Color(242,242,242));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

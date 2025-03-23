@@ -10,20 +10,21 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Luisa Fernanda Henao
+ * @author jgiugtiñut
  */
-public class AgregarAmigo extends javax.swing.JDialog {
-    private PgPrincipal pgPrincipal;
+public class AgregAmigo extends javax.swing.JDialog {
+        private PgPrincipal pgPrincipal;
     private DirectorioAmigos directorioAmigos;
 
     /**
-     * Creates new form AgregarAmigo
+     * Creates new form AgregAmigo
      */
-    public AgregarAmigo(java.awt.Frame parent, boolean modal, DirectorioAmigos directorioAmigos, PgPrincipal pgPrincipal) {
+    public AgregAmigo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.pgPrincipal = pgPrincipal;
         this.directorioAmigos = directorioAmigos;
         initComponents();
+        setLocationRelativeTo(this);
     }
 
     /**
@@ -198,7 +199,7 @@ public class AgregarAmigo extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,32 +216,31 @@ public class AgregarAmigo extends javax.swing.JDialog {
     }//GEN-LAST:event_NombretxtActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-    try{
-        String nombre = Nombretxt.getText();
+        try{
+            String nombre = Nombretxt.getText();
             String telefono = NumeroTelefonotxt.getText();
             String correoElectronico = CorreoElectronicotxt.getText();
-            
+
             //Verificar si algun campo esta vacio antes de llamar el metodo de agregarAmigo
             if (nombre.isEmpty()|| telefono.isEmpty()|| correoElectronico.isEmpty()){
                 throw new DatoObligatorioException();
             }
             //Se llama el metodo agregarAmigo del DirectorioAmigos
             directorioAmigos.agregarAmigo(nombre, telefono, correoElectronico);
-            
+
             JOptionPane.showMessageDialog(this, "Amigo agregado correctamente.");
-            dispose();   
-        }catch(DatoObligatorioException|CorreoInvalidoException | 
-                TelefonoInvalidoException | AmigoDuplicadoException e){
-        JOptionPane.showMessageDialog(this, "Error");
-        
+            dispose();
+        }catch(DatoObligatorioException|CorreoInvalidoException |
+            TelefonoInvalidoException | AmigoDuplicadoException e){
+            JOptionPane.showMessageDialog(this, "Error");
+
         }
-    
+
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-     dispose();
+        dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.TextField CorreoElectronicotxt;
