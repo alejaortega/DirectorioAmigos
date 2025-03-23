@@ -6,8 +6,28 @@ package autonoma.directoriodeamigos.models;
 
 /**
  *
- * @author jgiugtiñut
+ * @author Alejandra
  */
-public class Amigo {
+/**
+ * Clase Amigo que hereda de la clase abstracta Persona.
+ * Representa un amigo con nombre, teléfono y correo electrónico.
+ * Esta clase utiliza el constructor de la clase base Persona.
+ * 
+ * Se espera que se utilice en el contexto del directorio de amistades,
+ * donde se gestionan instancias de amigos registrados en la aplicación.
+ */
+public class Amigo extends Persona {
     
+    /**
+     * Constructor de la clase Amigo.
+     * 
+     * @param nombre  Nombre del amigo
+     * @param telefono  Número de teléfono del amigo
+     * @param correo  Correo electrónico del amigo
+     */
+    public Amigo(String nombre, String telefono, String correo) {
+        super(nombre, telefono, correo);
+    }
 }
+
+
