@@ -1,6 +1,8 @@
 
 package autonoma.directoriodeamigos.views;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Luisa Fernanda Henao
@@ -13,6 +15,12 @@ public class AgregarAmigo extends javax.swing.JDialog {
     public AgregarAmigo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
+        try{
+            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/directoriodeamigos/images/DirectorioAmigos.png")).getImage());
+        }catch(Exception e){
+            
+        }
     }
 
     /**

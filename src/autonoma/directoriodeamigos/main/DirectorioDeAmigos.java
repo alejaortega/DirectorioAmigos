@@ -4,6 +4,8 @@
  */
 package autonoma.directoriodeamigos.main;
 
+import autonoma.directoriodeamigos.views.VentanaPrincipal;
+
 /**
  *
  * @author valej
@@ -14,7 +16,9 @@ public class DirectorioDeAmigos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        VentanaPrincipal ventanaPrincipal = new  VentanaPrincipal();
+        ventanaPrincipal.setVisible(true);
+        
     }
     
 }

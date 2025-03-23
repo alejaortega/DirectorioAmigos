@@ -1,6 +1,8 @@
 
 package autonoma.directoriodeamigos.views;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Luisa Fernanda Henao
@@ -10,6 +12,12 @@ public class BuscarAmigo extends javax.swing.JDialog {
     public BuscarAmigo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
+        try{
+            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/directoriodeamigos/images/DirectorioAmigos.png")).getImage());
+        }catch(Exception e){
+            
+        }
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
