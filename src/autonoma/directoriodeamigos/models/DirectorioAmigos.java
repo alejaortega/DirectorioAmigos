@@ -86,8 +86,6 @@ public class DirectorioAmigos {
         throw new AmigoNoEncontradoException();
     }
     
-    
-    
     /**
     * Elimina un amigo del directorio usando su número de teléfono.
     * @param telefono Número de teléfono del amigo a eliminar.

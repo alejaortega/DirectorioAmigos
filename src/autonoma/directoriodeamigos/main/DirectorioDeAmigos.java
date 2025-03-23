@@ -8,7 +8,7 @@ package autonoma.directoriodeamigos.main;
  *
  * @author valej
  */
-public class main {
+public class DirectorioDeAmigos {
 
     /**
      * @param args the command line arguments
