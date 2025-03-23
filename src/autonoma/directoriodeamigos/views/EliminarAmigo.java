@@ -1,6 +1,10 @@
 
 package autonoma.directoriodeamigos.views;
 
+import autonoma.directoriodeamigos.exceptions.AmigoNoEncontradoException;
+import autonoma.directoriodeamigos.models.DirectorioAmigos;
+import javax.swing.JOptionPane;
+
 
 
 
@@ -135,6 +139,30 @@ public class EliminarAmigo extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtTelefonoEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoEliminarActionPerformed
+        // Asegúrate de que directorioAmigos esté correctamente inicializado
+DirectorioAmigos directorioAmigos = new DirectorioAmigos();
+
+String telefono = txtTelefonoEliminar.getText().trim(); // Obtener el teléfono desde el campo de texto
+
+// Verificar si el teléfono está vacío
+if (telefono.isEmpty()) {
+    JOptionPane.showMessageDialog(this, "Por favor ingresa un número de teléfono.", "Campo Vacío", JOptionPane.WARNING_MESSAGE);
+    return;
+}
+
+try {
+    // Llamar al método eliminarAmigo usando el teléfono proporcionado
+    directorioAmigos.eliminarAmigo(telefono); // Llamada al método eliminarAmigo
+
+    // Mostrar mensaje de éxito
+    JOptionPane.showMessageDialog(this, "Amigo eliminado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+
+    // Limpiar el campo después de eliminar con éxito
+    txtTelefonoEliminar.setText(""); 
+} catch (AmigoNoEncontradoException e) {
+    // Mostrar mensaje si no se encuentra el amigo con el teléfono proporcionado
+    JOptionPane.showMessageDialog(this, "No se encontró un amigo con ese teléfono.", "Error", JOptionPane.ERROR_MESSAGE);
+}
 
     }//GEN-LAST:event_txtTelefonoEliminarActionPerformed
 

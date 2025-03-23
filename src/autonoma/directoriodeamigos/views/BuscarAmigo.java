@@ -4,23 +4,20 @@ import autonoma.directoriodeamigos.exceptions.AmigoNoEncontradoException;
 import autonoma.directoriodeamigos.main.DirectorioDeAmigos;
 import autonoma.directoriodeamigos.models.Amigo;
 import autonoma.directoriodeamigos.models.DirectorioAmigos;
+import java.awt.Frame;
 
 import javax.swing.JOptionPane;
-
-
-
 /**
  * @author Luisa Fernanda Henao
  * @since 20250323
  * @version 1.0.0
  */
 public class BuscarAmigo extends javax.swing.JDialog {
-   private final DirectorioDeAmigos directorioDeAmigos;
-   private final DirectorioAmigos directorioAmigos = null ;
+   private final DirectorioDeAmigos directorioDeAmigos = null;
+   private final DirectorioAmigos directorioAmigos = null;
    
-    public BuscarAmigo(java.awt.Frame parent, boolean modal, DirectorioDeAmigos directoriodeamigos, DirectorioAmigos directorioamigos) {
+    public BuscarAmigo(Frame parent, boolean modal) {
         super(parent, modal);
-        this.directorioDeAmigos = directoriodeamigos;
         initComponents();
         this.setLocationRelativeTo(null);
 
