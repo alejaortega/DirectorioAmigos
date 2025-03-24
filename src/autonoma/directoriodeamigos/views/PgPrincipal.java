@@ -5,8 +5,9 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 /**
- *
- * @author jgiugtiñut
+ * @author Gilary
+ * @since 20250322
+ * @version 1.0
  */
 public class PgPrincipal extends javax.swing.JFrame {
 
@@ -73,24 +74,25 @@ public class PgPrincipal extends javax.swing.JFrame {
         InformacionLayout.setHorizontalGroup(
             InformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(InformacionLayout.createSequentialGroup()
-                .addGroup(InformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(InformacionLayout.createSequentialGroup()
-                        .addGap(222, 222, 222)
-                        .addComponent(jLabel13))
-                    .addGroup(InformacionLayout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(jLabel11)))
+                .addGap(222, 222, 222)
+                .addComponent(jLabel13)
                 .addGap(17, 17, 17))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InformacionLayout.createSequentialGroup()
-                .addComponent(jLabel12)
-                .addContainerGap())
+                .addContainerGap()
+                .addGroup(InformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InformacionLayout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InformacionLayout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(89, 89, 89))))
         );
         InformacionLayout.setVerticalGroup(
             InformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(InformacionLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13))
@@ -106,11 +108,11 @@ public class PgPrincipal extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Informacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jLabel1)
+                .addContainerGap(23, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Informacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -153,7 +155,7 @@ public class PgPrincipal extends javax.swing.JFrame {
                         .addGap(102, 102, 102)
                         .addComponent(jLabel2))
                     .addGroup(AgregarAmigoLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
+                        .addGap(31, 31, 31)
                         .addComponent(jLabel8)))
                 .addContainerGap())
         );
@@ -233,13 +235,13 @@ public class PgPrincipal extends javax.swing.JFrame {
         EliminarAmigoLayout.setHorizontalGroup(
             EliminarAmigoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EliminarAmigoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EliminarAmigoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addContainerGap())
+            .addGroup(EliminarAmigoLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
                 .addComponent(jLabel4)
-                .addGap(25, 25, 25))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         EliminarAmigoLayout.setVerticalGroup(
             EliminarAmigoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -253,6 +255,9 @@ public class PgPrincipal extends javax.swing.JFrame {
 
         MostrarAmigos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(32, 164, 159), 10));
         MostrarAmigos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MostrarAmigosMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 MostrarAmigosMouseEntered(evt);
             }
@@ -297,9 +302,9 @@ public class PgPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(AgregarAmigo, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AgregarAmigo, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EliminarAmigo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(44, 44, 44)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(MostrarAmigos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BuscarAmigo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -321,7 +326,7 @@ public class PgPrincipal extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(EliminarAmigo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(MostrarAmigos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         MostrarAmigos.getAccessibleContext().setAccessibleParent(MostrarAmigos);
@@ -343,19 +348,19 @@ public class PgPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MostrarAmigosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MostrarAmigosMouseExited
-    MostrarAmigos.setBackground(new Color(255, 255, 255));
+    this.mouseExited(MostrarAmigos);
     }//GEN-LAST:event_MostrarAmigosMouseExited
 
     private void MostrarAmigosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MostrarAmigosMouseEntered
-    MostrarAmigos.setBackground(new Color(103, 223, 218));
+    this.mouseEntered(MostrarAmigos);
     }//GEN-LAST:event_MostrarAmigosMouseEntered
 
     private void EliminarAmigoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EliminarAmigoMouseExited
-    EliminarAmigo.setBackground(new Color(255, 255, 255));
+    this.mouseExited(EliminarAmigo);    
     }//GEN-LAST:event_EliminarAmigoMouseExited
 
     private void EliminarAmigoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EliminarAmigoMouseEntered
-    EliminarAmigo.setBackground(new Color(103, 223, 218));
+    this.mouseEntered(EliminarAmigo);
     }//GEN-LAST:event_EliminarAmigoMouseEntered
 
     private void EliminarAmigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EliminarAmigoMouseClicked
@@ -364,11 +369,11 @@ public class PgPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_EliminarAmigoMouseClicked
 
     private void BuscarAmigoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarAmigoMouseExited
-    BuscarAmigo.setBackground(new Color(255, 255, 255));
+    this.mouseExited(BuscarAmigo);
     }//GEN-LAST:event_BuscarAmigoMouseExited
 
     private void BuscarAmigoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarAmigoMouseEntered
-    BuscarAmigo.setBackground(new Color(103, 223, 218));
+    this.mouseEntered(BuscarAmigo);
     }//GEN-LAST:event_BuscarAmigoMouseEntered
 
     private void BuscarAmigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarAmigoMouseClicked
@@ -377,11 +382,11 @@ public class PgPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BuscarAmigoMouseClicked
 
     private void AgregarAmigoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarAmigoMouseExited
-    AgregarAmigo.setBackground(new Color(255, 255, 255));
+    this.mouseExited(AgregarAmigo);
     }//GEN-LAST:event_AgregarAmigoMouseExited
 
     private void AgregarAmigoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarAmigoMouseEntered
-     AgregarAmigo.setBackground(new Color(103, 223, 218));
+     this.mouseEntered(AgregarAmigo);
     }//GEN-LAST:event_AgregarAmigoMouseEntered
 
     private void AgregarAmigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarAmigoMouseClicked
@@ -390,11 +395,11 @@ public class PgPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_AgregarAmigoMouseClicked
 
     private void InformacionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InformacionMouseExited
-    Informacion.setBackground(new Color(255, 255, 255));
+    this.mouseExited(Informacion);
     }//GEN-LAST:event_InformacionMouseExited
 
     private void InformacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InformacionMouseEntered
-    Informacion.setBackground(new Color(103, 223, 218));
+    this.mouseEntered(Informacion);
     }//GEN-LAST:event_InformacionMouseEntered
 
     private void InformacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InformacionMouseClicked
@@ -402,6 +407,18 @@ public class PgPrincipal extends javax.swing.JFrame {
         info.setVisible(true);
     }//GEN-LAST:event_InformacionMouseClicked
 
+    private void MostrarAmigosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MostrarAmigosMouseClicked
+    MostrarAmigo mostrar = new MostrarAmigo (this, true, this.directorioAmigos);
+    mostrar.setVisible(true);
+    }//GEN-LAST:event_MostrarAmigosMouseClicked
+
+    private void mouseEntered(JPanel panel){
+        panel.setBackground(new Color(110, 233, 228));
+        
+    }
+    private void mouseExited(JPanel panel){
+        panel.setBackground(new Color(242,242,242));
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AgregarAmigo;
     private javax.swing.JPanel BuscarAmigo;

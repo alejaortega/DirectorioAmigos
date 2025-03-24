@@ -9,8 +9,9 @@ import autonoma.directoriodeamigos.models.DirectorioAmigos;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author jgiugtiñut
+ * @author Gilary
+ * @since 20250322
+ * @version 1.0
  */
 public class AgregarAmigo extends javax.swing.JDialog {
     private DirectorioAmigos directorioAmigos;
