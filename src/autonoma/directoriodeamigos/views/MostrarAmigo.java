@@ -129,7 +129,7 @@ public class MostrarAmigo extends javax.swing.JDialog {
                 {null, null, null}
             },
             new String [] {
-                "Nombre", "Numero", "Correo"
+                "Nombre", "Correo", "Numero"
             }
         ));
         jScrollPane2.setViewportView(Nombre);
