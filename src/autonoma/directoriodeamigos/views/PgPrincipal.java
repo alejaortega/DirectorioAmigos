@@ -324,6 +324,8 @@ public class PgPrincipal extends javax.swing.JFrame {
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
+        MostrarAmigos.getAccessibleContext().setAccessibleParent(MostrarAmigos);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
