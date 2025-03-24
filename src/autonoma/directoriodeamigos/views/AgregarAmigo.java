@@ -13,14 +13,12 @@ import javax.swing.JOptionPane;
  * @author jgiugtiñut
  */
 public class AgregarAmigo extends javax.swing.JDialog {
-        private PgPrincipal pgPrincipal;
     private DirectorioAmigos directorioAmigos;
 
-    public AgregarAmigo(java.awt.Frame parent, boolean modal) {
+    public AgregarAmigo(java.awt.Frame parent, boolean modal, DirectorioAmigos directorioAmigos) {
         super(parent, modal);
-        this.pgPrincipal = pgPrincipal;
-        this.directorioAmigos = directorioAmigos;
         initComponents();
+        this.directorioAmigos = directorioAmigos;
         setLocationRelativeTo(this);
     }
     @SuppressWarnings("unchecked")
@@ -207,25 +205,43 @@ public class AgregarAmigo extends javax.swing.JDialog {
     }//GEN-LAST:event_NombretxtActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        try{
-            String nombre = Nombretxt.getText();
-            String telefono = NumeroTelefonotxt.getText();
-            String correoElectronico = CorreoElectronicotxt.getText();
+ try {
+        // Obtener los valores de los campos
+        String nombre = Nombretxt.getText().trim();
+        String telefono = NumeroTelefonotxt.getText().trim();
+        String correo = CorreoElectronicotxt.getText().trim();
 
-            //Verificar si algun campo esta vacio antes de llamar el metodo de agregarAmigo
-            if (nombre.isEmpty()|| telefono.isEmpty()|| correoElectronico.isEmpty()){
-                throw new DatoObligatorioException();
-            }
-            //Se llama el metodo agregarAmigo del DirectorioAmigos
-            directorioAmigos.agregarAmigo(nombre, telefono, correoElectronico);
-
-            JOptionPane.showMessageDialog(this, "Amigo agregado correctamente.");
-            dispose();
-        }catch(DatoObligatorioException|CorreoInvalidoException |
-            TelefonoInvalidoException | AmigoDuplicadoException e){
-            JOptionPane.showMessageDialog(this, "Error");
-
+        // 1. Verificar si algún campo está vacío
+        if (nombre.isEmpty() || telefono.isEmpty() || correo.isEmpty()) {
+            throw new DatoObligatorioException();
         }
+
+        // 2. Validar el número de teléfono
+        if (!telefono.startsWith("30") && !telefono.startsWith("606")) {
+            throw new TelefonoInvalidoException();
+        }
+
+        // 3. Validar el correo
+        if (!correo.contains("@")) {
+            throw new CorreoInvalidoException();
+        }
+        if (this.directorioAmigos == null) {
+            System.out.println("ERROR: directorioAmigos es NULL en AgregarAmigo");
+            return ;
+        }
+
+        // Si todo está correcto, se agrega el amigo
+        directorioAmigos.agregarAmigo(nombre, telefono, correo);
+        JOptionPane.showMessageDialog(this, "Amigo agregado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        this.dispose();
+    } catch (DatoObligatorioException e) {
+        JOptionPane.showMessageDialog(this, "Error: Todos los campos deben estar llenos.");
+    } catch (TelefonoInvalidoException e) {
+        JOptionPane.showMessageDialog(this, "Error: El número de teléfono debe comenzar con '30' o '606'.");
+    } catch (CorreoInvalidoException e) {
+        JOptionPane.showMessageDialog(this, "Error: El correo electrónico debe contener '@'.");
+    }
+
 
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -249,3 +265,5 @@ public class AgregarAmigo extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
+
+
