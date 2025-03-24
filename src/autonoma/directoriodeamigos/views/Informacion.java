@@ -68,14 +68,13 @@ public class Informacion extends javax.swing.JDialog {
         jPanel6.setBackground(new java.awt.Color(32, 164, 159));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
-        jLabel15.setText("Taller");
+        jLabel15.setText("Taller:");
 
         jLabel18.setFont(new java.awt.Font("Segoe UI Emoji", 1, 16)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 51, 51));
         jLabel18.setText("Directorio De Amistades");
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(102, 102, 102));
         jLabel16.setText("Asignatura");
 
         jLabel19.setFont(new java.awt.Font("Segoe UI Emoji", 1, 16)); // NOI18N
@@ -83,7 +82,6 @@ public class Informacion extends javax.swing.JDialog {
         jLabel19.setText("Programación Orientada a Objetos");
 
         jLabel23.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(102, 102, 102));
         jLabel23.setText("Universidad");
 
         jLabel21.setFont(new java.awt.Font("Segoe UI Emoji", 1, 16)); // NOI18N
@@ -91,7 +89,6 @@ public class Informacion extends javax.swing.JDialog {
         jLabel21.setText("Universidad Autonoma De Manizales");
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(102, 102, 102));
         jLabel17.setText("Desarrolladores");
 
         jLabel26.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
@@ -115,7 +112,7 @@ public class Informacion extends javax.swing.JDialog {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jLabel1.setText("Informacion acerca de la APP");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -126,21 +123,12 @@ public class Informacion extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel15)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel18)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel21))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel19))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jLabel23)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel21))
+                            .addComponent(jLabel16)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel17)
                                 .addGap(18, 18, 18)
@@ -148,26 +136,28 @@ public class Informacion extends javax.swing.JDialog {
                                     .addComponent(jLabel26)
                                     .addGroup(jPanel6Layout.createSequentialGroup()
                                         .addGap(6, 6, 6)
+                                        .addComponent(jLabel28))
+                                    .addComponent(jLabel27)
+                                    .addComponent(btnCancelar)))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addGap(24, 24, 24)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addGap(61, 61, 61)
                                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel28)
-                                            .addComponent(jLabel27))))))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(btnCancelar))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(jLabel1)))
-                .addGap(0, 6, Short.MAX_VALUE))
+                                            .addComponent(jLabel18)
+                                            .addComponent(jLabel19))))))
+                        .addGap(0, 17, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(22, 22, 22)
                 .addComponent(jLabel1)
-                .addGap(40, 40, 40)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
                     .addComponent(jLabel18))
@@ -187,9 +177,9 @@ public class Informacion extends javax.swing.JDialog {
                 .addComponent(jLabel27)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel28)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(btnCancelar)
-                .addGap(20, 20, 20))
+                .addGap(31, 31, 31))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -206,7 +196,7 @@ public class Informacion extends javax.swing.JDialog {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -219,10 +209,10 @@ public class Informacion extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();

@@ -136,7 +136,7 @@ public class MostrarAmigo extends javax.swing.JDialog {
 
         btnCancelar.setBackground(new java.awt.Color(83, 102, 107));
         btnCancelar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        btnCancelar.setText("CERRAR");
+        btnCancelar.setText("SALIR");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
@@ -160,7 +160,7 @@ public class MostrarAmigo extends javax.swing.JDialog {
                 .addGap(136, 136, 136)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(201, 201, 201)
+                .addGap(189, 189, 189)
                 .addComponent(btnCancelar))
         );
         jPanel2Layout.setVerticalGroup(
@@ -177,9 +177,9 @@ public class MostrarAmigo extends javax.swing.JDialog {
                                 .addComponent(jLabel1)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addComponent(btnCancelar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -226,9 +226,7 @@ public class MostrarAmigo extends javax.swing.JDialog {
     }//GEN-LAST:event_MostrarAmigosMouseExited
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        MostrarAmigo mostrarAmigo = new MostrarAmigo((java.awt.Frame) getParent(), true, directorioAmigos);
-mostrarAmigo.setVisible(true);
-
+        dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
 
