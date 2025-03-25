@@ -209,41 +209,46 @@ public class AgregarAmigo extends javax.swing.JDialog {
  try {
         // Obtener los valores de los campos
         String nombre = Nombretxt.getText().trim();
-        String telefono = NumeroTelefonotxt.getText().trim();
         String correo = CorreoElectronicotxt.getText().trim();
+        String telefono = NumeroTelefonotxt.getText().trim();
 
         // 1. Verificar si algún campo está vacío
-        if (nombre.isEmpty() || telefono.isEmpty() || correo.isEmpty()) {
+        if (nombre.isEmpty() || correo.isEmpty() || telefono.isEmpty()) {
             throw new DatoObligatorioException();
         }
 
-        // 2. Validar el número de teléfono
+        // 2. Validar el correo (debe contener '@')
+        if (!correo.contains("@")) {
+            throw new CorreoInvalidoException();
+        }
+
+        // 3. Validar el número de teléfono (debe comenzar con "30" o "606")
         if (!telefono.startsWith("30") && !telefono.startsWith("606")) {
             throw new TelefonoInvalidoException();
         }
 
-        // 3. Validar el correo
-        if (!correo.contains("@")) {
-            throw new CorreoInvalidoException();
-        }
+        // Verificar que directorioAmigos no sea null
         if (this.directorioAmigos == null) {
             System.out.println("ERROR: directorioAmigos es NULL en AgregarAmigo");
-            return ;
+            return;
         }
 
-        // Si todo está correcto, se agrega el amigo
+        // Depuración: imprimir los valores antes de guardar
+        System.out.println("Intentando guardar: Nombre=" + nombre + ", Teléfono=" + telefono + ", Correo=" + correo);
+
+        // Agregar el amigo en el orden correcto
         directorioAmigos.agregarAmigo(nombre, telefono, correo);
+
+        // Confirmación al usuario
         JOptionPane.showMessageDialog(this, "Amigo agregado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
     } catch (DatoObligatorioException e) {
-        JOptionPane.showMessageDialog(this, "Error: Todos los campos deben estar llenos.");
-    } catch (TelefonoInvalidoException e) {
-        JOptionPane.showMessageDialog(this, "Error: El número de teléfono debe comenzar con '30' o '606'.");
+        JOptionPane.showMessageDialog(this, "Error: Todos los campos deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
     } catch (CorreoInvalidoException e) {
-        JOptionPane.showMessageDialog(this, "Error: El correo electrónico debe contener '@'.");
+        JOptionPane.showMessageDialog(this, "Error: El correo electrónico debe contener '@'.", "Error", JOptionPane.ERROR_MESSAGE);
+    } catch (TelefonoInvalidoException e) {
+        JOptionPane.showMessageDialog(this, "Error: El número de teléfono debe comenzar con '30' o '606'.", "Error", JOptionPane.ERROR_MESSAGE);
     }
-
-
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed

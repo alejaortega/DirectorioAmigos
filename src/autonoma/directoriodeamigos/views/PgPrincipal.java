@@ -377,8 +377,8 @@ public class PgPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BuscarAmigoMouseEntered
 
     private void BuscarAmigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarAmigoMouseClicked
-        BuscarAmigo ventanaBuscar = new BuscarAmigo(this, true);
-        ventanaBuscar.setVisible(true);
+        BuscarAmigo buscar = new BuscarAmigo(this, true, directorioAmigos);
+        buscar.setVisible(true);
     }//GEN-LAST:event_BuscarAmigoMouseClicked
 
     private void AgregarAmigoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarAmigoMouseExited

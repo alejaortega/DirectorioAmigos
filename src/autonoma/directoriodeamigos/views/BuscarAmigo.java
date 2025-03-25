@@ -1,6 +1,8 @@
 
 package autonoma.directoriodeamigos.views;
 import autonoma.directoriodeamigos.exceptions.AmigoNoEncontradoException;
+import autonoma.directoriodeamigos.exceptions.CorreoInvalidoException;
+import autonoma.directoriodeamigos.exceptions.DatoObligatorioException;
 import autonoma.directoriodeamigos.main.DirectorioDeAmigos;
 import autonoma.directoriodeamigos.models.Amigo;
 import autonoma.directoriodeamigos.models.DirectorioAmigos;
@@ -13,12 +15,12 @@ import javax.swing.JOptionPane;
  * @version 1.0.0
  */
 public class BuscarAmigo extends javax.swing.JDialog {
-   private final DirectorioDeAmigos directorioDeAmigos = null;
-   private final DirectorioAmigos directorioAmigos = null;
+   private DirectorioAmigos directorioAmigos;
    
-    public BuscarAmigo(Frame parent, boolean modal) {
+    public BuscarAmigo(Frame parent, boolean modal, DirectorioAmigos directorioAmigos) {
         super(parent, modal);
         initComponents();
+        this.directorioAmigos = directorioAmigos;
         this.setLocationRelativeTo(null);
 
     }
@@ -131,7 +133,7 @@ public class BuscarAmigo extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, 0)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -143,28 +145,25 @@ public class BuscarAmigo extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarAmigoActionPerformed
-        // Obtener el correo ingresado en el campo de texto
-    String correo = txtCorreoBuscar.getText().trim(); 
-
-    if (correo.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Por favor ingresa un correo.", "Campo Vacío", JOptionPane.WARNING_MESSAGE);
+      if (this.directorioAmigos == null) {
+        System.out.println("ERROR: directorioAmigos es NULL en BuscarAmigo");
         return;
     }
 
-    try {
-        // Buscar al amigo en el directorio usando su correo
-        Amigo amigo = directorioAmigos.buscarAmigo(correo);
-
-        // Mostrar información del amigo encontrado
-        JOptionPane.showMessageDialog(this, """
-                                            Amigo encontrado:
-                                            Nombre: """ + amigo.getNombre() + "\n" +
-                "Correo: " + amigo.getCorreoElectronico() + "\n" +
-                "Teléfono: " + amigo.getTelefono(),
-                "Información del Amigo", JOptionPane.INFORMATION_MESSAGE);
-    } catch (AmigoNoEncontradoException e) {
-        // Mostrar mensaje si no se encuentra el amigo
-        JOptionPane.showMessageDialog(this, "No se encontró un amigo con ese correo.", "Error", JOptionPane.ERROR_MESSAGE);
+    String correoBuscado = txtCorreoBuscar.getText().trim();
+    boolean encontrado = false;
+    
+    for (Amigo a : directorioAmigos.getListaAmigos()) {
+        System.out.println("Amigo registrado: " + a.getCorreoElectronico());
+        if (a.getCorreoElectronico().equalsIgnoreCase(correoBuscado)) {
+            JOptionPane.showMessageDialog(this, "Amigo encontrado:\nNombre: " + a.getNombre() + "\nTeléfono: " + a.getTelefono(), "Búsqueda Exitosa", JOptionPane.INFORMATION_MESSAGE);
+            encontrado = true;
+            break;
+        }
+    }
+    
+    if (!encontrado) {
+        JOptionPane.showMessageDialog(this, "No se encontró un amigo con ese correo.", "No encontrado", JOptionPane.WARNING_MESSAGE);
     }
 
     }//GEN-LAST:event_btnBuscarAmigoActionPerformed

@@ -1,6 +1,9 @@
 package autonoma.directoriodeamigos.views;
 
 import autonoma.directoriodeamigos.exceptions.AmigoNoEncontradoException;
+import autonoma.directoriodeamigos.exceptions.DatoObligatorioException;
+import autonoma.directoriodeamigos.exceptions.TelefonoInvalidoException;
+import autonoma.directoriodeamigos.models.Amigo;
 import autonoma.directoriodeamigos.models.DirectorioAmigos;
 import javax.swing.JOptionPane;
 
@@ -158,7 +161,51 @@ public class EliminarAmigo extends javax.swing.JDialog {
     }//GEN-LAST:event_txtTelefonoEliminarActionPerformed
 
     private void btnEliminarAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarAmigoActionPerformed
-
+        try {
+        String telefono = txtTelefonoEliminar.getText().trim();
+        
+        if (telefono.isEmpty()) {
+            throw new DatoObligatorioException();
+        }
+        
+        // Depuración mejorada
+        System.out.println("=== Depuración: Lista completa de amigos ===");
+        for (Amigo a : directorioAmigos.getListaAmigos()) {
+            System.out.println("Nombre: " + a.getNombre() + 
+                             " | Teléfono: " + a.getTelefono() + 
+                             " | Correo: " + a.getCorreoElectronico());
+        }
+        
+        // Validación adicional del formato del teléfono
+        if (!telefono.startsWith("30") && !telefono.startsWith("606")) {
+            throw new TelefonoInvalidoException();
+        }
+        
+        directorioAmigos.eliminarAmigo(telefono);
+        
+        JOptionPane.showMessageDialog(this, 
+            "Amigo con teléfono " + telefono + " eliminado correctamente.", 
+            "Éxito", 
+            JOptionPane.INFORMATION_MESSAGE);
+            
+        this.dispose();
+        
+    } catch (DatoObligatorioException e) {
+        JOptionPane.showMessageDialog(this, 
+            "Error: Debes ingresar un número de teléfono.", 
+            "Error", 
+            JOptionPane.ERROR_MESSAGE);
+    } catch (TelefonoInvalidoException e) {
+        JOptionPane.showMessageDialog(this, 
+            "Error: El teléfono debe comenzar con '30' o '606'.", 
+            "Error", 
+            JOptionPane.ERROR_MESSAGE);
+    } catch (AmigoNoEncontradoException e) {
+        JOptionPane.showMessageDialog(this, 
+            "Error: No existe un amigo con el teléfono: " + txtTelefonoEliminar.getText().trim(), 
+            "Error", 
+            JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_btnEliminarAmigoActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed

@@ -77,15 +77,18 @@ public class DirectorioAmigos {
      * @throws AmigoNoEncontradoException Si el amigo no está registrado.
      */
     public Amigo buscarAmigo(String correo) throws AmigoNoEncontradoException {
-        for (Amigo a : listaAmigos) {
-            if (a.getCorreoElectronico().equalsIgnoreCase(correo)) {
-                return a; // Retorna el amigo si lo encuentra.
-            }
+    System.out.println("Buscando amigo con correo: " + correo);
+
+    for (Amigo a : listaAmigos) {
+        System.out.println("Amigo registrado: " + a.getCorreoElectronico()); // Depuración
+        if (a.getCorreoElectronico().equalsIgnoreCase(correo)) {
+            return a; // Retorna el amigo si lo encuentra.
         }
-        // Si no se encuentra, lanza una excepción
-        throw new AmigoNoEncontradoException();
     }
-    
+
+    // Si no se encuentra, lanza una excepción
+    throw new AmigoNoEncontradoException();
+    }
     /**
     * Elimina un amigo del directorio usando su número de teléfono.
     * @param telefono Número de teléfono del amigo a eliminar.
