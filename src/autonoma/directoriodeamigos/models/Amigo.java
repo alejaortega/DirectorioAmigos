@@ -26,7 +26,7 @@ public class Amigo extends Persona {
      * @param correo  Correo electrónico del amigo
      */
     public Amigo(String nombre, String telefono, String correo) {
-        super(nombre, telefono, correo);
+        super(nombre, correo, telefono);
     }
 }
 

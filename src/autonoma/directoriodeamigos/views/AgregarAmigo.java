@@ -232,7 +232,6 @@ public class AgregarAmigo extends javax.swing.JDialog {
             System.out.println("ERROR: directorioAmigos es NULL en AgregarAmigo");
             return;
         }
-
         // Depuración: imprimir los valores antes de guardar
         System.out.println("Intentando guardar: Nombre=" + nombre + ", Teléfono=" + telefono + ", Correo=" + correo);
 

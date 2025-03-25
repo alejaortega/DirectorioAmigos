@@ -176,8 +176,6 @@ public class BuscarAmigo extends javax.swing.JDialog {
     
     }//GEN-LAST:event_txtCorreoBuscarActionPerformed
 
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarAmigo;
     private javax.swing.JButton btnVolver;

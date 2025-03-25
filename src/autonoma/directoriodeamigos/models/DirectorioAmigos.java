@@ -38,37 +38,45 @@ public class DirectorioAmigos {
      * @throws TelefonoInvalidoException Si el teléfono no inicia con 606 o 30.
      * @throws AmigoDuplicadoException Si el correo ya está registrado.
      */
-    public void agregarAmigo(String nombres, String telefono, String correo) 
-            throws DatoObligatorioException, CorreoInvalidoException, TelefonoInvalidoException, AmigoDuplicadoException {
+   public void agregarAmigo(String nombres, String telefono, String correo) 
+        throws DatoObligatorioException, CorreoInvalidoException, TelefonoInvalidoException, AmigoDuplicadoException {
 
-        // Validar que todos los campos sean obligatorios
-        if (nombres == null || nombres.isEmpty() ||
-            telefono == null || telefono.isEmpty() ||
-            correo == null || correo.isEmpty()) {
-            throw new DatoObligatorioException();
-        }
+    // Depuración: Ver valores antes de guardar
+    System.out.println("Intentando agregar amigo: ");
+    System.out.println("Nombre: " + nombres);
+    System.out.println("Teléfono: " + telefono);
+    System.out.println("Correo: " + correo);
 
-        // Validar que el correo contenga '@'
-        if (correo.indexOf("@") == -1) {
-            throw new CorreoInvalidoException();
-        }
-
-        // Validar que el teléfono inicie con "606" o "30"
-        if (!(telefono.startsWith("606") || telefono.startsWith("30"))) {
-            throw new TelefonoInvalidoException();
-        }
-
-        // Verificar si el correo ya está registrado
-        for (Amigo a : listaAmigos) {
-            if (a.getCorreoElectronico().equalsIgnoreCase(correo)) {
-                throw new AmigoDuplicadoException();
-            }
-        }
-
-        // Si pasa todas las validaciones, se agrega el amigo a la lista
-        listaAmigos.add(new Amigo(nombres, telefono, correo));
+    // Validar que todos los campos sean obligatorios
+    if (nombres == null || nombres.isEmpty() ||
+        telefono == null || telefono.isEmpty() ||
+        correo == null || correo.isEmpty()) {
+        throw new DatoObligatorioException();
     }
 
+    // Validar que el correo contenga '@'
+    if (correo.indexOf("@") == -1) {
+        throw new CorreoInvalidoException();
+    }
+
+    // Validar que el teléfono inicie con "606" o "30"
+    if (!(telefono.startsWith("606") || telefono.startsWith("30"))) {
+        throw new TelefonoInvalidoException();
+    }
+
+    // Verificar si el correo ya está registrado
+    for (Amigo a : listaAmigos) {
+        if (a.getCorreoElectronico().equalsIgnoreCase(correo)) {
+            throw new AmigoDuplicadoException();
+        }
+    }
+
+    // Si pasa todas las validaciones, se agrega el amigo a la lista
+    listaAmigos.add(new Amigo(nombres, telefono, correo));
+
+    // Depuración: Verificación después de agregar
+    System.out.println("Amigo registrado correctamente!");
+}
     /**
      * Busca un amigo en el directorio por su correo.
      * 

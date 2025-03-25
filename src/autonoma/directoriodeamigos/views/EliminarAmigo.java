@@ -167,20 +167,6 @@ public class EliminarAmigo extends javax.swing.JDialog {
         if (telefono.isEmpty()) {
             throw new DatoObligatorioException();
         }
-        
-        // Depuración mejorada
-        System.out.println("=== Depuración: Lista completa de amigos ===");
-        for (Amigo a : directorioAmigos.getListaAmigos()) {
-            System.out.println("Nombre: " + a.getNombre() + 
-                             " | Teléfono: " + a.getTelefono() + 
-                             " | Correo: " + a.getCorreoElectronico());
-        }
-        
-        // Validación adicional del formato del teléfono
-        if (!telefono.startsWith("30") && !telefono.startsWith("606")) {
-            throw new TelefonoInvalidoException();
-        }
-        
         directorioAmigos.eliminarAmigo(telefono);
         
         JOptionPane.showMessageDialog(this, 
