@@ -41,11 +41,6 @@ public class DirectorioAmigos {
    public void agregarAmigo(String nombres, String telefono, String correo) 
         throws DatoObligatorioException, CorreoInvalidoException, TelefonoInvalidoException, AmigoDuplicadoException {
 
-    // Depuración: Ver valores antes de guardar
-    System.out.println("Intentando agregar amigo: ");
-    System.out.println("Nombre: " + nombres);
-    System.out.println("Teléfono: " + telefono);
-    System.out.println("Correo: " + correo);
 
     // Validar que todos los campos sean obligatorios
     if (nombres == null || nombres.isEmpty() ||
@@ -74,8 +69,7 @@ public class DirectorioAmigos {
     // Si pasa todas las validaciones, se agrega el amigo a la lista
     listaAmigos.add(new Amigo(nombres, telefono, correo));
 
-    // Depuración: Verificación después de agregar
-    System.out.println("Amigo registrado correctamente!");
+
 }
     /**
      * Busca un amigo en el directorio por su correo.
@@ -87,12 +81,6 @@ public class DirectorioAmigos {
     public Amigo buscarAmigo(String correo) throws AmigoNoEncontradoException {
     System.out.println("Buscando amigo con correo: " + correo);
 
-    for (Amigo a : listaAmigos) {
-        System.out.println("Amigo registrado: " + a.getCorreoElectronico()); // Depuración
-        if (a.getCorreoElectronico().equalsIgnoreCase(correo)) {
-            return a; // Retorna el amigo si lo encuentra.
-        }
-    }
 
     // Si no se encuentra, lanza una excepción
     throw new AmigoNoEncontradoException();
