@@ -130,7 +130,7 @@ public class MostrarAmigo extends javax.swing.JDialog {
                 {null, null, null}
             },
             new String [] {
-                "Nombre", "Correo", "Numero"
+                "Nombre", "Número", "Correo"
             }
         ) {
             boolean[] canEdit = new boolean [] {
