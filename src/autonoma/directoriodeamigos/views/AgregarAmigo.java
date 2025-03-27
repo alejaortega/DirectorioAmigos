@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  * @since 20250322
  * @version 1.0
  */
+
 public class AgregarAmigo extends javax.swing.JDialog {
     private DirectorioAmigos directorioAmigos;
 
@@ -212,40 +213,21 @@ public class AgregarAmigo extends javax.swing.JDialog {
         String correo = CorreoElectronicotxt.getText().trim();
         String telefono = NumeroTelefonotxt.getText().trim();
 
-        // 1. Verificar si algún campo está vacío
-        if (nombre.isEmpty() || correo.isEmpty() || telefono.isEmpty()) {
-            throw new DatoObligatorioException();
-        }
-
-        // 2. Validar el correo (debe contener '@')
-        if (!correo.contains("@")) {
-            throw new CorreoInvalidoException();
-        }
-
-        // 3. Validar el número de teléfono (debe comenzar con "30" o "606")
-        if (!telefono.startsWith("30") && !telefono.startsWith("606")) {
-            throw new TelefonoInvalidoException();
-        }
-
-        // Verificar que directorioAmigos no sea null
-        if (this.directorioAmigos == null) {
-            System.out.println("ERROR: directorioAmigos es NULL en AgregarAmigo");
-            return;
-        }
-       
-
         // Agregar el amigo en el orden correcto
         directorioAmigos.agregarAmigo(nombre, telefono, correo);
 
         // Confirmación al usuario
-        JOptionPane.showMessageDialog(this, "Amigo agregado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Amigo agregado correctamente.");
         this.dispose();
     } catch (DatoObligatorioException e) {
-        JOptionPane.showMessageDialog(this, "Error: Todos los campos deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Error: Todos los campos deben estar llenos.");
     } catch (CorreoInvalidoException e) {
-        JOptionPane.showMessageDialog(this, "Error: El correo electrónico debe contener '@'.", "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Error: El correo electrónico debe contener '@'.");
     } catch (TelefonoInvalidoException e) {
-        JOptionPane.showMessageDialog(this, "Error: El número de teléfono debe comenzar con '30' o '606'.", "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Error: El número de teléfono debe comenzar con '30' o '606'.");
+    }catch (AmigoDuplicadoException e){
+        JOptionPane.showMessageDialog(this, "Error: El amigo ya esta registrado.");
+
     }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
